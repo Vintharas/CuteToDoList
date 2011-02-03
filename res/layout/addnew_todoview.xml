@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal">
+  	<Button
+  		android:id="@+id/bt_addnewtask"
+  		android:layout_width="@dimen/bt_addnewtask_size"
+  		android:layout_height="@dimen/bt_addnewtask_size"
+  		android:layout_margin="@dimen/bt_addnewtask_padding"
+  		android:layout_alignParentRight="true" />
+  	<EditText
+  		android:id="@+id/et_addnewtask"
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:layout_toLeftOf="@id/bt_addnewtask" 
+  		android:text="@string/add_new_todo" />
+</RelativeLayout>

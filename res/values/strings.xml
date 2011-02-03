@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_new_todo">Add New To Do Here</string>
+    <string name="app_name">CuteTasks</string>
+</resources>

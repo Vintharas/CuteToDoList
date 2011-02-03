@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="notepad_margin">30dp</dimen>
+	<dimen name="bt_addnewtask_size">40dp</dimen>
+	<dimen name="bt_addnewtask_padding">5dp</dimen>
+</resources>
