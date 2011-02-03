@@ -6,4 +6,5 @@
   android:padding="10dp"
   android:scrollbars="vertical"
   android:textColor="@color/notepad_text"
-  android:fadingEdge="vertical" />
+  android:fadingEdge="vertical"
+  />

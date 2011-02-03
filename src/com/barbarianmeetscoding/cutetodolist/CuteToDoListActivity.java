@@ -26,7 +26,7 @@ public class CuteToDoListActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.todolist);
         loadToDoList();
         loadAddNewToDoBehavior();
     }
@@ -48,6 +48,8 @@ public class CuteToDoListActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				addNewToDo(addNewToDoView.getContent());
+				arrayAdapter.notifyDataSetChanged();
+				addNewToDoView.deleteEditTextContent();
 			}
 		});
 	}

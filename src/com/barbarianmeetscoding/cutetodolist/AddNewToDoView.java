@@ -56,12 +56,29 @@ public class AddNewToDoView extends RelativeLayout{
 			
 			@Override
 			public void onClick(View v) {
-				String initialEditTextString = getResources().getString(R.string.add_new_todo);
-				if (et_AddNewTask.getText().toString() == initialEditTextString)
-					et_AddNewTask.setText("");
+				if (editTextHasDefaultValue())
+					deleteEditTextContent();
 			}
 		});
-		
+		et_AddNewTask.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				if (hasFocus && editTextHasDefaultValue())
+					deleteEditTextContent();
+			}
+		});
+	}
+	
+	private boolean editTextHasDefaultValue(){
+		String initialEditTextString = getResources().getString(R.string.add_new_todo);
+		if (et_AddNewTask.getText().toString().equals(initialEditTextString))
+			return true;
+		return false;
+	}
+	
+	public void deleteEditTextContent(){
+		et_AddNewTask.setText("");
 	}
 
 }
