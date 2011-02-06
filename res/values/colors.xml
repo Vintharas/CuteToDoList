@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!-- ToDoList -->
 	<color name="notepad_paper">#AAFFFFFF</color>
 	<color name="notepad_lines">#77CC00BB</color>
 	<color name="notepad_margin">#90FF0000</color>
 	<color name="notepad_text">#FFCC00BB</color>
 	<color name="todolist_background">#FFFFFFFF</color>
+	<color name="addnewtodo_pasivetext">#FF999999</color>
+	<color name="addnewtodo_activetext">#FF000000</color>
 </resources>

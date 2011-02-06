@@ -15,5 +15,6 @@
   		android:layout_width="fill_parent"
   		android:layout_height="wrap_content"
   		android:layout_toLeftOf="@id/bt_addnewtask" 
-  		android:text="@string/add_new_todo" />
+  		android:text="@string/add_new_todo" 
+  		android:textColor="@color/addnewtodo_pasivetext"/>
 </RelativeLayout>
