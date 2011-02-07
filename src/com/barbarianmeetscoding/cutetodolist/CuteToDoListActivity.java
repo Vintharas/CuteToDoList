@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 public class CuteToDoListActivity extends ListActivity {
 	
