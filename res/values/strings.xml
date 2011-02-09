@@ -6,12 +6,14 @@
     <!-- ToDoList Activity -->
     <string name="add_new_todo">Add new To Do here</string>
     
-	<!-- Options Menu -->
-    <string name="menu_settings">Settings</string>
+	<!-- Menus -->
+	<string name="menu_settings">Settings</string>
     <string name="menu_edit_todo">Edit To Do</string>
     <string name="menu_delete_todo">Delete To Do</string>
+    
     
     <!--  Toasts -->
     <string name="toast_new_todo_added">New To Do added</string>
     <string name="toast_todo_cannot_be_empty">Please, fill in the box with the new To Do before adding</string>
+    <string name="toast_error_notodo_selected">Please, select a To Do from the list</string>
 </resources>

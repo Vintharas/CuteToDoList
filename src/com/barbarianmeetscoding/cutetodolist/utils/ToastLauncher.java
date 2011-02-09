@@ -9,10 +9,12 @@ public class ToastLauncher {
 
 	private static final int TOAST_NEW_TODO = 0;
 	private static final int TOAST_NEW_TODO_CANNOT_BE_EMPTY = 1;
+	private static final int ERROR_NOTODO_SELECTED = 100;
 	
 	public enum ToastType{
 		NEW_TODO(0),
-		NEW_TODO_CANNOT_BE_EMPTY(1);
+		NEW_TODO_CANNOT_BE_EMPTY(1),
+		ERROR_NOTODO_SELECTED(100);
 		
 		private int toastType;
 		ToastType(int toastType){
@@ -31,6 +33,9 @@ public class ToastLauncher {
 			break;
 		case TOAST_NEW_TODO_CANNOT_BE_EMPTY:
 			messageResourceId = R.string.toast_todo_cannot_be_empty;
+			break;
+		case ERROR_NOTODO_SELECTED:
+			messageResourceId = R.string.toast_error_notodo_selected;
 			break;
 		}
 		Toast.makeText(context, messageResourceId, Toast.LENGTH_SHORT).show();

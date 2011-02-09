@@ -16,10 +16,11 @@ public class ToDoList {
 			return true;
 		}
 		return false;
-			
 	}
 	
-	public void deleteToDo(int position){
+	public void deleteToDo(int position) throws ArrayIndexOutOfBoundsException{
+		if (position < 0 || position >= toDoList.size())
+			throw new ArrayIndexOutOfBoundsException("there is no to do in position " + position);
 		toDoList.remove(position);
 	}
 }
