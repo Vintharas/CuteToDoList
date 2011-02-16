@@ -1,4 +1,6 @@
-package com.barbarianmeetscoding.cutetodolist;
+package com.barbarianmeetscoding.cutetodolist.ui;
+
+import com.barbarianmeetscoding.cutetodolist.R;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -53,7 +55,7 @@ public class AddNewToDoView extends RelativeLayout{
 		// Inflate view
 		LayoutInflater li = (LayoutInflater)getContext()
 			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		li.inflate(R.layout.addnew_todoview, this, true);
+		li.inflate(R.layout.addnewtodo_view, this, true);
 		// get reference to child controls
 		et_AddNewToDo = (EditText)findViewById(R.id.et_addnewtask);
 		bt_AddNewToDo = (Button)findViewById(R.id.bt_addnewtask);

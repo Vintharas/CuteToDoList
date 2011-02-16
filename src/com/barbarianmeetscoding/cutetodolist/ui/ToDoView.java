@@ -1,4 +1,6 @@
-package com.barbarianmeetscoding.cutetodolist;
+package com.barbarianmeetscoding.cutetodolist.ui;
+
+import com.barbarianmeetscoding.cutetodolist.R;
 
 import android.content.Context;
 import android.content.res.Resources;

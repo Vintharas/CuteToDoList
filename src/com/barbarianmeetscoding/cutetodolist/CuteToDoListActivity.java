@@ -1,5 +1,7 @@
 package com.barbarianmeetscoding.cutetodolist;
 
+import com.barbarianmeetscoding.cutetodolist.ui.AddNewToDoView;
+import com.barbarianmeetscoding.cutetodolist.ui.ToDoListAdapter;
 import com.barbarianmeetscoding.cutetodolist.domain.ToDo;
 import com.barbarianmeetscoding.cutetodolist.domain.ToDoList;
 import com.barbarianmeetscoding.cutetodolist.storage.MockUpToDoList;
@@ -16,7 +18,6 @@ import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -25,7 +26,7 @@ public class CuteToDoListActivity extends ListActivity {
 	
 	private ToDoList toDoList;
 	private AddNewToDoView addNewToDoView;
-	private ArrayAdapter<ToDo> arrayAdapter;
+	private ToDoListAdapter toDoListAdapter;
 	private ListView toDoListView;
 	
 	private static final int MENU_SETTINGS = Menu.FIRST;
@@ -52,13 +53,14 @@ public class CuteToDoListActivity extends ListActivity {
 		// temporary instantiation
 		toDoList = MockUpToDoList.getFakeToDoList();
 		// bind list to adapter
-        arrayAdapter = new ArrayAdapter<ToDo>(this, 
-        									R.layout.todoview,
+		toDoListAdapter = new ToDoListAdapter(this, 
+        									R.layout.todolistitem_view,
+        									R.id.tv_todolistitem,
         									toDoList.getToDoList());
         //toDoListView = (ListView)findViewById(R.id.todolist);
         //toDoListView.setAdapter(arrayAdapter);
         //toDoListView.setDivider(null);
-        setListAdapter(arrayAdapter);
+        setListAdapter(toDoListAdapter);
 	}
 
 	private void loadAddNewToDoBehavior() {
@@ -69,7 +71,7 @@ public class CuteToDoListActivity extends ListActivity {
 			public void onClick(View v) {
 				Context context = CuteToDoListActivity.this;
 				if (toDoList.addToDo(addNewToDoView.getContent())){
-					arrayAdapter.notifyDataSetChanged();
+					toDoListAdapter.notifyDataSetChanged();
 					addNewToDoView.resetControl();
 					ToastLauncher.showToast(context, ToastLauncher.ToastType.NEW_TODO);
 				}
@@ -116,7 +118,7 @@ public class CuteToDoListActivity extends ListActivity {
 	private boolean deleteToDo(int toDoPosition) {
 		try {
 			toDoList.deleteToDo(toDoPosition);
-			arrayAdapter.notifyDataSetChanged();
+		    toDoListAdapter.notifyDataSetChanged();
 		}catch(ArrayIndexOutOfBoundsException ex){
 			return false;
 		}
