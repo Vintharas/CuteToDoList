@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- General Application -->
-    <string name="app_name">CuteToDoList</string>
+    <string name="app_name">Cute ToDo List</string>
     
     <!-- ToDoList Activity -->
-    <string name="add_new_todo">Add new To Do here</string>
+    <string name="add_new_todo">Add new To-Do here</string>
     
 	<!-- Menus -->
 	<string name="menu_settings">Settings</string>
-    <string name="menu_edit_todo">Edit To Do</string>
-    <string name="menu_delete_todo">Delete To Do</string>
+    <string name="menu_edit_todo">Edit To-Do</string>
+    <string name="menu_delete_todo">Delete To-Do</string>
+    <string name="menu_archive_todo">Archive To-Do</string>
     
     
     <!--  Toasts -->

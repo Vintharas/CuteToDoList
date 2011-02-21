@@ -7,9 +7,9 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.widget.TextView;
+import android.widget.CheckedTextView;
 
-public class ToDoView extends TextView{
+public class ToDoView extends CheckedTextView{
 
 	private Paint marginPaint;
 	private Paint linePaint;

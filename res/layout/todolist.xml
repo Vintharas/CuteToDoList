@@ -11,11 +11,14 @@
 			android:layout_height="fill_parent" 
 			android:dividerHeight="0dp"
 			android:layout_weight="1"
+			android:background="@color/todolist_background"
+			android:choiceMode="multipleChoice"
 			/>
 		<com.barbarianmeetscoding.cutetodolist.ui.AddNewToDoView 
 			android:id="@+id/addnewtodoview"
 	    	android:layout_width="fill_parent" 
 	    	android:layout_height="wrap_content"
 	    	android:layout_gravity="bottom"
+	    	android:background="@color/todolist_background"
 	    	/>
 </LinearLayout>

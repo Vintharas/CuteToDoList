@@ -66,7 +66,6 @@ public class AddNewToDoView extends RelativeLayout{
 	private void initializeViewBehavior() {
 		et_AddNewToDo.setOnClickListener(new OnClickListener() {
 			
-			@Override
 			public void onClick(View v) {
 				if (editTextHasDefaultValue())
 					activateTextView();
@@ -74,7 +73,6 @@ public class AddNewToDoView extends RelativeLayout{
 		});
 		et_AddNewToDo.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
-			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				if (hasFocus && editTextHasDefaultValue())
 					activateTextView();

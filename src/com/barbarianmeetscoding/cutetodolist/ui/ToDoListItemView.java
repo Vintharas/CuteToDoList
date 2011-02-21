@@ -5,8 +5,6 @@ import com.barbarianmeetscoding.cutetodolist.R;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 
 public class ToDoListItemView extends RelativeLayout{

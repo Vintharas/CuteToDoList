@@ -2,7 +2,6 @@ package com.barbarianmeetscoding.cutetodolist;
 
 import com.barbarianmeetscoding.cutetodolist.ui.AddNewToDoView;
 import com.barbarianmeetscoding.cutetodolist.ui.ToDoListAdapter;
-import com.barbarianmeetscoding.cutetodolist.domain.ToDo;
 import com.barbarianmeetscoding.cutetodolist.domain.ToDoList;
 import com.barbarianmeetscoding.cutetodolist.storage.MockUpToDoList;
 import com.barbarianmeetscoding.cutetodolist.utils.ToastLauncher;
@@ -19,7 +18,6 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class CuteToDoListActivity extends ListActivity {
 	
@@ -46,7 +44,8 @@ public class CuteToDoListActivity extends ListActivity {
 
 	private void setUpListView() {
         toDoListView = getListView();
-        toDoListView.setDivider(null);
+        toDoListView.setDivider(null);  
+        toDoListView.setItemsCanFocus(false);
 	}
 
 	private void loadToDoList() {
@@ -54,8 +53,7 @@ public class CuteToDoListActivity extends ListActivity {
 		toDoList = MockUpToDoList.getFakeToDoList();
 		// bind list to adapter
 		toDoListAdapter = new ToDoListAdapter(this, 
-        									R.layout.todolistitem_view,
-        									R.id.tv_todolistitem,
+        									R.layout.todo_view,
         									toDoList.getToDoList());
         //toDoListView = (ListView)findViewById(R.id.todolist);
         //toDoListView.setAdapter(arrayAdapter);
@@ -67,7 +65,6 @@ public class CuteToDoListActivity extends ListActivity {
         addNewToDoView = (AddNewToDoView)findViewById(R.id.addnewtodoview);
         addNewToDoView.setButtonOnClickListener(new OnClickListener() {
 			
-			@Override
 			public void onClick(View v) {
 				Context context = CuteToDoListActivity.this;
 				if (toDoList.addToDo(addNewToDoView.getContent())){
@@ -103,13 +100,15 @@ public class CuteToDoListActivity extends ListActivity {
 		int toDoPosition = toDoListView.getSelectedItemPosition();
 		switch (menuItem.getItemId()){
 		case MENU_SETTINGS:
+			// launch settings submenu
 			break;
 		case MENU_EDIT_TODO:
+			// load dialog with textview
 			break;
 		case MENU_DELETE_TODO:
 			 if (!deleteToDo(toDoPosition))
 				 ToastLauncher.showToast(this, ToastType.ERROR_NOTODO_SELECTED);
-			break;
+			break;	
 		}
 		
 		return true;
@@ -139,7 +138,7 @@ public class CuteToDoListActivity extends ListActivity {
 		AdapterView.AdapterContextMenuInfo menuInfo;
 		menuInfo = (AdapterView.AdapterContextMenuInfo)menuItem.getMenuInfo();
 		int toDoPosition = menuInfo.position;
-		// act upon the selected todo
+		// act upon the selected toDo
 		switch(menuItem.getItemId())
 		{
 		case R.id.contextmenu_edit_todo:

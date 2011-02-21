@@ -9,6 +9,10 @@
 		android:id="@+id/contextmenu_delete_todo"
 		android:title="@string/menu_delete_todo">
 	</item>
+	<item
+		android:id="@+id/contextmenu_archive_todo"
+		android:title="@string/menu_archive_todo" >
+	</item>
 </menu>
     
     
